@@ -246,3 +246,56 @@ RESERVA(
 Este repositório servirá como base para as próximas etapas do desenvolvimento do sistema.
 
 A documentação e o modelo lógico poderão ser atualizados posteriormente caso ocorram alterações na estrutura ou nas funcionalidades do projeto durante a implementação.
+
+---
+
+## 🗃️ Implementação do banco de dados (nova etapa)
+
+O estudo de caso da AeroBrasil foi convertido em um banco de dados relacional **MySQL 8.0.16 ou superior**, com base nas cinco entidades e nos relacionamentos descritos no modelo lógico e no Diagrama ER acima.
+
+- **SGBD:** MySQL 8.0.16+ (InnoDB)
+- **Banco de dados:** `aerobrasil_reservas`
+- **Quantidade de tabelas:** 5 (`passageiro`, `aeronave`, `aeroporto`, `voo`, `reserva`)
+- **Massa de testes:** 1.000 registros inseridos por comandos `INSERT` no arquivo SQL
+
+### Relacionamentos implementados
+
+- `reserva.id_passageiro` → `passageiro.id_passageiro` (um passageiro pode ter várias reservas).
+- `reserva.num_voo` → `voo.num_voo` (um voo pode ter várias reservas).
+- `voo.id_aeronave` → `aeronave.id_aeronave` (uma aeronave pode realizar vários voos).
+- `voo.id_aeroporto_origem` → `aeroporto.id_aeroporto` (aeroporto de origem).
+- `voo.id_aeroporto_destino` → `aeroporto.id_aeroporto` (aeroporto de destino).
+
+As tabelas possuem chaves primárias, chaves estrangeiras e restrições de integridade pertinentes. Por exemplo, o documento de identificação é único; a capacidade da aeronave precisa ser positiva; origem e destino do voo não podem ser iguais; e um mesmo assento não pode ser reservado duas vezes para o mesmo voo. O uso de `ON DELETE RESTRICT` impede excluir cadastros ainda referenciados.
+
+### Distribuição da massa de testes
+
+| Tabela | Registros |
+| --- | ---: |
+| Passageiro | 350 |
+| Aeronave | 25 |
+| Aeroporto | 25 |
+| Voo | 200 |
+| Reserva | 400 |
+| **Total** | **1.000** |
+
+Os registros representam passageiros fictícios, aeroportos brasileiros, modelos de aeronaves, voos com origem e destino distintos e reservas associadas a passageiros e voos existentes, com diferentes datas, classes, assentos e valores. Os dados de identificação e contato dos passageiros são fictícios.
+
+### Arquivos do repositório
+
+- **`README.md`** — estudo de caso, modelo lógico, Diagrama ER e documentação do banco de dados.
+- **`database.sql`** — cria e seleciona o banco, define as cinco tabelas e suas restrições e insere os 1.000 registros.
+
+### Como executar
+
+Em um servidor MySQL 8.0.16+ com permissão para criar bancos, execute o arquivo `database.sql` inteiro, por exemplo:
+
+```bash
+mysql -u root -p < database.sql
+```
+
+O script cria o banco `aerobrasil_reservas` caso ele não exista. **Atenção:** ao ser executado novamente, o script recria as cinco tabelas, apagando os registros anteriores dessas tabelas; use-o apenas no ambiente de desenvolvimento/testes.
+
+### Versionamento
+
+A versão anterior do estudo de caso e do DER permanece na branch `main`. A implementação SQL desta etapa deve ser publicada na branch `banco-de-dados`, preservando o histórico anterior.
