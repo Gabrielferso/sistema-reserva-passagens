@@ -1,10 +1,10 @@
-# ✈️ Sistema de Reserva de Passagens Aéreas — AeroBrasil
+# ✈️ Sistema de Reserva de Passagens Aéreas — IN-DOALI
 
 ## 👥 Equipe
 
 **Projeto:** Sistema de Reserva de Passagens Aéreas
 
-**Empresa fictícia:** AeroBrasil Linhas Aéreas
+**Empresa fictícia:** IN-DOALI
 
 **Integrantes:**
 - João Gabriel
@@ -18,7 +18,7 @@
 
 ## 💻 Sobre o projeto
 
-O Sistema de Reserva de Passagens Aéreas foi desenvolvido com o objetivo de centralizar e organizar as informações relacionadas às operações da AeroBrasil Linhas Aéreas, incluindo passageiros, voos, aeronaves, aeroportos, reservas aéreas, hotéis, quartos, hospedagens e pacotes de viagem.
+O Sistema de Reserva de Passagens Aéreas foi desenvolvido com o objetivo de centralizar e organizar as informações relacionadas às operações da IN-DOALI, incluindo passageiros, voos, aeronaves, aeroportos, reservas aéreas, hotéis, quartos, hospedagens e pacotes de viagem.
 
 Com o crescimento da quantidade de voos, passageiros e serviços oferecidos, tornou-se necessário desenvolver uma solução capaz de facilitar o gerenciamento das informações e dos pedidos realizados pelos clientes.
 
@@ -65,7 +65,7 @@ O gerenciamento dos quartos será realizado dentro do módulo de hotéis. Da mes
 
 ## ✈️ Cenário de utilização
 
-A AeroBrasil Linhas Aéreas realiza voos entre diferentes aeroportos e oferece serviços de hospedagem por meio de hotéis cadastrados no sistema.
+A IN-DOALI realiza voos entre diferentes aeroportos e oferece serviços de hospedagem por meio de hotéis cadastrados no sistema.
 
 Cada passageiro possui um cadastro com suas informações pessoais e pode realizar diversas reservas de passagens aéreas e hospedagens ao longo do tempo.
 
