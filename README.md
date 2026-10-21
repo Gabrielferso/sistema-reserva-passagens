@@ -557,3 +557,77 @@ Responsável pela consulta centralizada dos pedidos e pelo gerenciamento dos can
 Responsável pela conexão com o MySQL, execução das consultas SQL e integridade dos dados.
 
 A arquitetura deverá separar as classes de modelo, as regras de negócio, as operações de acesso ao banco e a interface de menus, facilitando a manutenção e a evolução do sistema.
+
+```text
+aerobrasil/
+│
+├── main.py
+│
+├── config/
+│   ├── __init__.py
+│   └── conexao.py
+│
+├── modelos/
+│   ├── __init__.py
+│   ├── passageiro.py
+│   ├── aeronave.py
+│   ├── aeroporto.py
+│   ├── voo.py
+│   ├── reserva.py
+│   ├── hotel.py
+│   ├── quarto.py
+│   ├── hospedagem.py
+│   └── pacote.py
+│
+├── passageiros/
+│   ├── __init__.py
+│   └── passageiro_service.py
+│
+├── voos/
+│   ├── __init__.py
+│   └── voo_service.py
+│
+├── reservas/
+│   ├── __init__.py
+│   └── reserva_service.py
+│
+├── hoteis/
+│   ├── __init__.py
+│   └── hotel_service.py
+│
+├── hospedagens/
+│   ├── __init__.py
+│   └── hospedagem_service.py
+│
+├── pacotes/
+│   ├── __init__.py
+│   └── pacote_service.py
+│
+├── pedidos/
+│   ├── __init__.py
+│   └── pedido_service.py
+│
+├── banco/
+│   ├── __init__.py
+│   ├── passageiro_repository.py
+│   ├── voo_repository.py
+│   ├── reserva_repository.py
+│   ├── hotel_repository.py
+│   ├── hospedagem_repository.py
+│   └── pacote_repository.py
+│
+├── menus/
+│   ├── __init__.py
+│   ├── menu_principal.py
+│   ├── menu_passageiros.py
+│   ├── menu_aereo.py
+│   ├── menu_reservas.py
+│   ├── menu_hoteis.py
+│   ├── menu_hospedagens.py
+│   ├── menu_pacotes.py
+│   └── menu_pedidos.py
+│
+└── sql/
+    ├── schema.sql
+    └── dados_teste.sql
+```
