@@ -111,7 +111,6 @@ O cancelamento deverá atualizar a situação do pedido e preservar seu históri
 
 ### Passageiros
 - Cadastrar passageiros.
-- Consultar passageiros.
 - Atualizar dados cadastrais.
 - Consultar as reservas e hospedagens associadas a um passageiro.
 
@@ -128,7 +127,6 @@ O cancelamento deverá atualizar a situação do pedido e preservar seu históri
 - Definir assento e classe da passagem.
 - Calcular o valor da reserva.
 - Verificar a disponibilidade de assentos.
-- Controlar a situação das reservas.
 
 ### Hotéis e quartos
 - Cadastrar e consultar hotéis.
@@ -138,7 +136,6 @@ O cancelamento deverá atualizar a situação do pedido e preservar seu históri
 - Consultar os quartos associados a cada hotel.
 
 ### Hospedagens
-- Criar hospedagens.
 - Consultar hospedagens.
 - Definir datas de entrada e saída.
 - Informar a quantidade de hóspedes.
