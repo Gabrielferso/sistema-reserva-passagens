@@ -1,0 +1,4 @@
+from services.menu import executar_menu
+
+if __name__ == "__main__":
+    executar_menu()
