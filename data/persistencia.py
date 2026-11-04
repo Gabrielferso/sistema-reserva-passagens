@@ -1,4 +1,3 @@
-
 from data import banco
 from data.arquivo import salvar_dados, carregar_dados
 from models.passageiro import Passageiro

@@ -4,7 +4,6 @@ from models.pacote import Pacote
 from services.util import ler_inteiro, ler_valor, data_obj
 from services.reservas import listar_reservas, obter_reserva
 from services.hospedagens import listar_hospedagens, obter_hospedagem
-from services.passageiros import obter_passageiro
 from services.voos import obter_voo
 
 
