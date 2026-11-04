@@ -1,4 +1,5 @@
 from data import banco
+from data.persistencia import salvar_banco
 from models.reserva import Reserva
 from services.util import ler_inteiro, ler_valor
 from services.passageiros import listar_passageiros, obter_passageiro
@@ -44,6 +45,7 @@ def criar_reserva():
     valor = ler_valor("Valor da passagem (R$): ")
     r = Reserva(banco.novo_id("reserva"), passageiro_id, voo_id, assento, valor)
     banco.reservas.append(r)
+    salvar_banco()
     print(f"Reserva criada com ID {r.id}.")
 
 

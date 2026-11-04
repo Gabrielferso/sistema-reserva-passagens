@@ -1,4 +1,5 @@
 from data import banco
+from data.persistencia import salvar_banco
 from models.hotel import Hotel
 from models.quarto import Quarto
 from services.util import ler_texto, ler_inteiro, ler_valor
@@ -9,6 +10,7 @@ def cadastrar_hotel():
     cidade = ler_texto("Cidade: ")
     hotel = Hotel(banco.novo_id("hotel"), nome, cidade)
     banco.hoteis.append(hotel)
+    salvar_banco()
     print(f"Hotel cadastrado com ID {hotel.id}.")
 
 
@@ -55,6 +57,7 @@ def cadastrar_quarto():
     diaria = ler_valor("Valor da diária (R$): ")
     quarto = Quarto(banco.novo_id("quarto"), numero, capacidade, diaria)
     hotel.quartos.append(quarto)
+    salvar_banco()
     print(f"Quarto cadastrado com ID {quarto.id}.")
 
 

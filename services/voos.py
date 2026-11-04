@@ -1,4 +1,5 @@
 from data import banco
+from data.persistencia import salvar_banco
 from models.voo import Voo
 from services.util import ler_texto, ler_inteiro, ler_data
 from services.passageiros import obter_passageiro
@@ -21,6 +22,7 @@ def cadastrar_voo():
         banco.novo_id("voo"), origem, destino, data, horario, aeronave, capacidade
     )
     banco.voos.append(voo)
+    salvar_banco()
     print(f"Voo cadastrado com ID {voo.id}.")
 
 

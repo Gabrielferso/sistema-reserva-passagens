@@ -1,4 +1,5 @@
 from data import banco
+from data.persistencia import salvar_banco
 from models.hospedagem import Hospedagem
 from services.util import ler_inteiro, ler_data, data_obj
 from services.passageiros import listar_passageiros, obter_passageiro
@@ -63,6 +64,7 @@ def criar_hospedagem():
         banco.novo_id("hospedagem"), pid, hid, qid, entrada, saida, valor
     )
     banco.hospedagens.append(hospedagem)
+    salvar_banco()
     print(f"Hospedagem criada com ID {hospedagem.id}. Total: R$ {valor:.2f}.")
 
 

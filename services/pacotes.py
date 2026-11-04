@@ -1,4 +1,5 @@
 from data import banco
+from data.persistencia import salvar_banco
 from models.pacote import Pacote
 from services.util import ler_inteiro, ler_valor, data_obj
 from services.reservas import listar_reservas, obter_reserva
@@ -54,6 +55,7 @@ def criar_pacote():
     valor = ler_valor("Valor adicional do pacote (R$): ")
     pacote = Pacote(banco.novo_id("pacote"), rid, hid, valor)
     banco.pacotes.append(pacote)
+    salvar_banco()
     print(f"Pacote criado com ID {pacote.id}.")
 
 

@@ -1,4 +1,5 @@
 from data import banco
+from data.persistencia import salvar_banco
 from models.passageiro import Passageiro
 from services.util import ler_texto
 
@@ -16,6 +17,7 @@ def cadastrar_passageiro():
     email = ler_texto("E-mail: ")
     p = Passageiro(banco.novo_id("passageiro"), nome, documento, telefone, email)
     banco.passageiros.append(p)
+    salvar_banco()
     print(f"Passageiro cadastrado com ID {p.id}.")
 
 
